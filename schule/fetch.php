@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
 list($user, $pass) = array('root', '74cb0A0kER');
 $dbh = new PDO('mysql:host=localhost;dbname=homeworks', $user, $pass);
 
