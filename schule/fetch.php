@@ -1,7 +1,7 @@
 <?php
 
 list($user, $pass) = array('root', '74cb0A0kER');
-$dbh = new PDO('mysql:host=localhost;dbname=hausaufgaben', $user, $pass);
+$dbh = new PDO('mysql:host=localhost;dbname=homeworks', $user, $pass);
 
 
 switch ($_GET["t"]) {
