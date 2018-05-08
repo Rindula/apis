@@ -11,18 +11,17 @@ switch ($_GET["t"]) {
             $out[] = array(
                 'id' => $row["ID"],
                 'aufgaben' => $aufgaben,
-                'datum' => strtotime($row["Datum"]),
+                'datum' => "".strtotime($row["Datum"]),
                 'fach' => $row["Fach"]
             );
         }
-
+        $result = "{'success': true, 'data': " . json_encode($out) . "}";
         break;
     
     default:
-        echo "{'success':false}";
-        die();
+        $result = "{'success':false}";
         break;
 }
 
 
-echo "{'success':true, 'data':" . json_encode($out) . "}";
+echo($result);
