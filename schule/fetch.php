@@ -11,7 +11,7 @@ switch ($_GET["t"]) {
             $out[] = array(
                 'id' => $row["ID"],
                 'aufgaben' => $aufgaben,
-                'datum' => strval(strtotime($row['Datum'])),
+                'datum' => strval(date("d.m.Y", $row['Datum'])),
                 'fach' => $row["Fach"]
             );
         }
