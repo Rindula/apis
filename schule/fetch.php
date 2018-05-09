@@ -17,7 +17,7 @@ switch ($_GET["t"]) {
         }
         $result = "{\"success\":true, \"data\":" . json_encode($out) . "}";
         if (isset($_GET["debug"])) {
-            json_encode($out);
+            json_encode($out, JSON_FORCE_OBJECT);
         }
         break;
     
