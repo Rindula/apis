@@ -7,18 +7,15 @@ $dbh = new PDO('mysql:host=localhost;dbname=homeworks', $user, $pass);
 switch ($_GET["t"]) {
     case 'hausaufgaben':
         foreach ($dbh->query('SELECT * FROM view_todo') as $row) {
-            $aufgaben = explode(";", $row["Aufgaben"]);
+            $aufgaben = explode(";", utf8_encode($row["Aufgaben"]));
             $out[] = array(
-                'id' => $row["ID"],
+                'id' => utf8_encode($row["ID"]),
                 'aufgaben' => $aufgaben,
-                'datum' => strval(date("d.m.Y", strtotime($row['Datum']))),
-                'fach' => $row["Fach"]
+                'datum' => utf8_encode(strval(date("d.m.Y", strtotime($row['Datum'])))),
+                'fach' => utf8_encode($row["Fach"])
             );
         }
         $result = "{\"success\":true, \"data\":" . json_encode($out) . "}";
-        if (isset($_GET["debug"])) {
-            json_encode($out, JSON_FORCE_OBJECT);
-        }
         break;
     
     default:
