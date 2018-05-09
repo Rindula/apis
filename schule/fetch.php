@@ -15,7 +15,7 @@ switch ($_GET["t"]) {
                 'fach' => $row["Fach"]
             );
         }
-        $result = "{\"success\": true, \"data\": " . json_encode($out) . "}";
+        $result = "{\"success\":true, \"data\":" . json_encode($out) . "}";
         break;
     
     default:
