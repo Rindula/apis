@@ -7,10 +7,9 @@ $dbh = new PDO('mysql:host=localhost;dbname=homeworks', $user, $pass);
 switch ($_GET["t"]) {
     case 'hausaufgaben':
         foreach ($dbh->query('SELECT * FROM view_todo') as $row) {
-            $aufgaben = explode(";", utf8_encode($row["Aufgaben"]));
             $out[] = array(
                 'id' => utf8_encode($row["ID"]),
-                'aufgaben' => $aufgaben,
+                'aufgaben' => $row["Aufgaben"],
                 'datum' => utf8_encode(strval(date("d.m.Y", strtotime($row['Datum'])))),
                 'fach' => utf8_encode($row["Fach"])
             );
