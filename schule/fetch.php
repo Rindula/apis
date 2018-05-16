@@ -9,7 +9,7 @@ switch ($_GET["t"]) {
         foreach ($dbh->query('SELECT * FROM view_todo') as $row) {
             $out[] = array(
                 'id' => utf8_encode($row["ID"]),
-                'aufgaben' => $row["Aufgaben"],
+                'aufgaben' => utf8_encode($row["Aufgaben"]),
                 'datum' => utf8_encode(strval(date("d.m.Y", strtotime($row['Datum'])))),
                 'fach' => utf8_encode($row["Fach"])
             );
