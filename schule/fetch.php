@@ -16,6 +16,18 @@ switch ($_GET["t"]) {
         }
         $result = "{\"success\":true, \"data\":" . json_encode($out) . "}";
         break;
+        
+    case 'arbeiten':
+        foreach ($dbh->query('SELECT * FROM view_arbeiten') as $row) {
+            $out[] = array(
+                'id' => utf8_encode($row["id"]),
+                'themen' => utf8_encode($row["themen"]),
+                'datum' => utf8_encode(strval(date("d.m.Y", strtotime($row['datum'])))),
+                'fach' => utf8_encode($row["fach"])
+            );
+        }
+        $result = "{\"success\":true, \"data\":" . json_encode($out) . "}";
+        break;
     
     default:
         $result = "{\"success\":false}";
