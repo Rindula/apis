@@ -27,7 +27,7 @@ switch ($t) {
         echo "Typen: bilanz, list, info". PHP_EOL;
         echo "Returns:". PHP_EOL;
         echo "\tbilanz: int".PHP_EOL;
-        echo "\tlist: JSON String";
+        echo "\tlist: JSON String".PHP_EOL;
         echo "\t\tJSON Status:".PHP_EOL;
         echo "\t\t\tPositiver Betrag:".PHP_EOL;
         echo "\t\t\t\t0: Betrag ausstehend".PHP_EOL;
