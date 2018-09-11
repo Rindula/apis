@@ -23,6 +23,21 @@ switch ($t) {
         echo json_encode($list);
         break;
 
+    case 'info':
+        echo "Typen: bilanz, list, info". PHP.EOL;
+        echo "Returns:". PHP.EOL;
+        echo "\tbilanz: int".PHP.EOL;
+        echo "\tlist: JSON String";
+        echo "\t\tJSON Status:".PHP.EOL;
+        echo "\t\t\tPositiver Betrag:".PHP.EOL;
+        echo "\t\t\t\t0: Betrag ausstehend".PHP.EOL;
+        echo "\t\t\t\t1: Betrag eingegangen".PHP.EOL;
+        echo "\t\t\tNegativer Betrag:".PHP.EOL;
+        echo "\t\t\t\t0: Betrag angefordert".PHP.EOL;
+        echo "\t\t\t\t1: Betrag akzeptiert, auszahlung ausstehend".PHP.EOL;
+        echo "\t\t\t\t2: Betrag ausgezahlt".PHP.EOL;
+        break;
+
     default:
         echo "ERROR: Wrong Request Type";
         http_response_code(400);
