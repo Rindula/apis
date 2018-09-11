@@ -10,7 +10,7 @@ switch ($t) {
     case 'bilanz':
         
         foreach ($dbh->query('SELECT * FROM bilanz') as $row) {
-            echo $row["bilanz"] . " €";
+            echo $row["bilanz"];
         }
 
         break;
