@@ -24,18 +24,18 @@ switch ($t) {
         break;
 
     case 'info':
-        echo "Typen: bilanz, list, info". PHP.EOL;
-        echo "Returns:". PHP.EOL;
-        echo "\tbilanz: int".PHP.EOL;
+        echo "Typen: bilanz, list, info". PHP_EOL;
+        echo "Returns:". PHP_EOL;
+        echo "\tbilanz: int".PHP_EOL;
         echo "\tlist: JSON String";
-        echo "\t\tJSON Status:".PHP.EOL;
-        echo "\t\t\tPositiver Betrag:".PHP.EOL;
-        echo "\t\t\t\t0: Betrag ausstehend".PHP.EOL;
-        echo "\t\t\t\t1: Betrag eingegangen".PHP.EOL;
-        echo "\t\t\tNegativer Betrag:".PHP.EOL;
-        echo "\t\t\t\t0: Betrag angefordert".PHP.EOL;
-        echo "\t\t\t\t1: Betrag akzeptiert, auszahlung ausstehend".PHP.EOL;
-        echo "\t\t\t\t2: Betrag ausgezahlt".PHP.EOL;
+        echo "\t\tJSON Status:".PHP_EOL;
+        echo "\t\t\tPositiver Betrag:".PHP_EOL;
+        echo "\t\t\t\t0: Betrag ausstehend".PHP_EOL;
+        echo "\t\t\t\t1: Betrag eingegangen".PHP_EOL;
+        echo "\t\t\tNegativer Betrag:".PHP_EOL;
+        echo "\t\t\t\t0: Betrag angefordert".PHP_EOL;
+        echo "\t\t\t\t1: Betrag akzeptiert, auszahlung ausstehend".PHP_EOL;
+        echo "\t\t\t\t2: Betrag ausgezahlt".PHP_EOL;
         break;
 
     default:
