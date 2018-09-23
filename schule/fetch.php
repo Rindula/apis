@@ -1,8 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 include "../../secrets.php"
-list($user, $pass) = array(DB_USER, DB_PASSWORD);
-$dbh = new PDO('mysql:host=localhost;dbname=homeworks', $user, $pass);
+$dbh = new PDO('mysql:host=localhost;dbname=homeworks', DB_USER, DB_PASSWORD);
 
 
 switch ($_GET["t"]) {
