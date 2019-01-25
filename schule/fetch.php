@@ -12,7 +12,7 @@ switch ($_GET["t"]) {
                 'id' => utf8_encode($row["ID"]),
                 'aufgaben' => utf8_encode($row["Aufgaben"]),
                 'datum' => utf8_encode(strval(date("d.m.Y", strtotime($row['Datum'])))),
-                'fach' => utf8_encode($row["Fach"])
+                'fach' => utf8_encode($row["fach"])
             );
         }
         $result = "{\"success\":true, \"data\":" . json_encode($out) . "}";
