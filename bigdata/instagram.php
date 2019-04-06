@@ -2,7 +2,10 @@
 
 $cred = $_POST["cred"];
 
-if ($cred != "3l7qC9Nn2hUJ2glA0ykTNlt649nOg28QvqaotkJkfuqIjVwJPO5NMibOWujljuvO") die();
+if ($cred != "3l7qC9Nn2hUJ2glA0ykTNlt649nOg28QvqaotkJkfuqIjVwJPO5NMibOWujljuvO") {
+    http_response_code(403);
+    die("Nope");
+}
 
 $id = $_POST["uname"];
 $name = $_POST["name"];
