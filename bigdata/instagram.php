@@ -17,7 +17,7 @@ require "../../secrets.php";
 $dbh = new PDO('mysql:host=localhost;dbname=bigdata', DB_USER, DB_PASSWORD);
 $dbh->query('SET NAMES utf8');
 
-$stmt = $dbh->prepare("INSERT INTO instagram (id, name, follower, follows, timestamp) VALUES (:id, :name, :follower, :follows, :ts)");
+$stmt = $dbh->prepare("INSERT INTO instagram (id, name, follower, follows, tstamp) VALUES (:id, :name, :follower, :follows, :ts)");
 
 $stmt->bindParam(":id", $id);
 $stmt->bindParam(":name", $name);
