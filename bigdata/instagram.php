@@ -17,11 +17,12 @@ require "../../secrets.php";
 $dbh = new PDO('mysql:host=localhost;dbname=bigdata', DB_USER, DB_PASSWORD);
 $dbh->query('SET NAMES utf8');
 
-$stmt = $dbh->prepare("INSERT INTO instagram (id, name, follower, follows) VALUES (:id, :name, :follower, :follows)");
+$stmt = $dbh->prepare("INSERT INTO instagram (id, name, follower, follows, timestamp) VALUES (:id, :name, :follower, :follows, :timestamp)");
 
 $stmt->bindParam(":id", $id);
 $stmt->bindParam(":name", $name);
 $stmt->bindParam(":follower", $follower);
 $stmt->bindParam(":follows", $follows);
+$stmt->bindParam(":timestamp", time() - time() % 60);
 
 $stmt->execute();
