@@ -11,6 +11,7 @@ $id = $_POST["uname"];
 $name = $_POST["name"];
 $follower = $_POST["follower"];
 $follows = $_POST["follows"];
+$ts = (time() - time() % 60);
 
 require "../../secrets.php";
 
@@ -23,6 +24,6 @@ $stmt->bindParam(":id", $id);
 $stmt->bindParam(":name", $name);
 $stmt->bindParam(":follower", $follower);
 $stmt->bindParam(":follows", $follows);
-$stmt->bindParam(":ts", (time() - time() % 60));
+$stmt->bindParam(":ts", $ts);
 
 $stmt->execute();
